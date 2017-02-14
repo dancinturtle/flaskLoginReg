@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reg/login</title>
+</head>
+<body>
+	<h1>Sign In</h1>
+	<form action='/process' method='post'>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		First Name: <input type="text" name="first_name"><br>
+		Last Name: <input type="text" name="last_name"><br>
+		Password: <input type="password" name="pw"><br>
+		<input type="submit" name="button" value="Sign In"><br>
+	</form>
+	<br>
+	<a href="/register">Click here to register!</a>
+	</form>
+</body>
+</html>
