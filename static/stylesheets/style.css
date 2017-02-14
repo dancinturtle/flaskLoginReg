@@ -1,0 +1,17 @@
+body{
+    white-space: nowrap;
+}
+.login-area{
+    width: 50%;
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
+}
+.register-area{
+    width: 50%;
+    white-space: normal;
+    display: inline-block;
+}
+.error-messages{
+    color: red;
+}
