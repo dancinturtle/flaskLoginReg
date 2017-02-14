@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <div class="register">
+      <p>New user? Create an account</p>
+      <form action="/register" method="post">
+        <table>
+          <tr>
+            <td>First name:</td>
+            <td><input type="text" name="first_name"></td>
+            <td>
+              {%with fname = get_flashed_messages(category_filter="fname")%}
+              {%if fname[0]%}
+              {{fname[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td>Last name:</td>
+            <td><input type="text" name="last_name"></td>
+            <td>
+              {%with lname = get_flashed_messages(category_filter="lname")%}
+              {%if lname[0]%}
+              {{lname[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email"></td>
+            <td>
+              {%with email = get_flashed_messages(category_filter="email")%}
+              {%if email[0]%}
+              {{email[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+            <td>
+              {%with password = get_flashed_messages(category_filter="password")%}
+              {%if password[0]%}
+              {{password[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td>Confirm Password:</td>
+            <td><input type="password" name="confirmpw"></td>
+            <td>
+              {%with confirmpw = get_flashed_messages(category_filter="confirmpw")%}
+              {%if confirmpw[0]%}
+              {{confirmpw[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" value="Sign Up"/>
+              </td>
+              <td></td>
+            </tr>
+          </tr>
+        </table>
+        {%with messages = get_flashed_messages(category_filter="messages")%}
+        {%if messages%}
+        <ul>
+          {%for msg in messages%}
+          <li>{{msg}}</li>
+          {%endfor%}
+        </ul><br>
+        {%endif%}
+        {%endwith%}
+      </form>
+    </div>
+    <div class="login">
+      <p>Returning user? Log in here.</p>
+      <form action="/login" method="post">
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="login_id"></td>
+            <td>
+              {%with login_id = get_flashed_messages(category_filter="login_id")%}
+              {%if login_id[0]%}
+              {{login_id[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="login_pw"></td>
+            <td>
+              {%with login_pw = get_flashed_messages(category_filter="login_pw")%}
+              {%if login_pw[0]%}
+              {{login_pw[0]}}
+              {%endif%}
+              {%endwith%}
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" value="Log In"/>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </form>
+      {%with messages = get_flashed_messages(category_filter="loginmsg")%}
+      {%if messages%}
+      <ul>
+        {%for msg in messages%}
+        <li>{{msg}}</li>
+        {%endfor%}
+      </ul><br>
+      {%endif%}
+      {%endwith%}
+    </div>
+  </body>
+</html>
