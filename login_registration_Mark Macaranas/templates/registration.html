@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login and Registration</title>
+	</head>
+	<body>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p class = "error message">{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		<form class="user_info" action="/process" method="post">
+			<label>Email:<input type="text" name="email" value=""></label> <br>
+			<label>First Name:<input type="text" name="first_name" value=""></label> <br>
+			<label>Last Name:<input type="text" name="last_name" value=""></label> <br>
+			<label>Password:<input type="password" name="password" value=""></label> <br>
+			<label>Confirm Password:<input type="password" name="confirm" value=""></label> <br>
+			<input type="submit" name="" value="Button">
+		</form>
+	</body>
+</html>
