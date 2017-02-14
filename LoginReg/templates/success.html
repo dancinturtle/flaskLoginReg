@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Login Registration</title>
+</head>
+<body>
+   <h2>Success! You are now registered or logged in.</h2>
+   <p>ID: {{ users['id'] }}</p>
+   <p>First Name: {{ users['first_name'] }}</p>
+   <p>Last Name: {{ users['last_name'] }}</p>
+   <p>Email: {{ users['email'] }}</p>
+   <hr>
+  <p>You are now logged in! Log out below:</p>
+  <form action='/logout' method='POST'>
+    <input type="submit" value="Log Out">
+  </form>
+</body>
+</html>
