@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<p>{{session["id"]}}</p>
+{% for each in result %}
+<p>{{each["first_name"]}}</p>
+<p>{{each["last_name"]}}</p>
+<p>{{each["email"]}}</p>
+<p>{{each["created_at"]}}</p>
+<p>{{each["updated_at"]}}</p>
+{% endfor %}
+  </body>
+  <a href="/logout">Log Out</a>
+</html>
