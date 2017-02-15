@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+     <title>login & registration </title>
+   </head>
+
+   <body>
+    <div>
+      <h2>Register</h2>
+      <form action="/users" method="post">
+        Name:<input type="text" name="name">
+        Email:<input type="text" name="email">
+        Password:<input type="text" name="password">
+        <input type="submit" value="Register">
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for category, message in messages %}
+            {% if category == 'registration' %}
+              <li>{{ message }}</li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <h2>Login</h2>
+      <form action="/login" method="post">
+        Email:<input type="text" name="email">
+        Password:<input type="text" name="password">
+        <input type="submit" value="Login">
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for category, message in messages %}
+            {% if category == 'login' %}
+            <li>{{ message }}</li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+   </body>
+ </html>
