@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <!--Import Google Icon Font-->
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Import materialize.css-->
+     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+     <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <title>Login and Registration</title>
+   </head>
+
+   <body>
+     <!--Import jQuery before materialize.js-->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <div class ="container">
+       <h2>Registration</h2>
+       <form action="/users" method ="post">
+       First name:<input type = "text" name ="first_name">
+       Last name:<input type = "text" name ="last_name">
+       Email:<input type = "text" name ="email">
+       Password:<input type = "text" name="password">
+       <input type="submit" value="Register">
+      </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        {% if category == 'registration' %}
+        <li>{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+      <hr>
+      <h2>Login</h2>
+      <form action="/login" method="post">
+        Email:<input type="text" name="email">
+        Password: <input type="password" name="password">
+        <input type="submit" value="login">
+      </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        {% if category == 'login' %}
+        <li>{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+     </div>
+   </body>
+ </html>
