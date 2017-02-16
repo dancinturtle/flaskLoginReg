@@ -1,3 +1,18 @@
+TO CONTRIBUTE TO THIS REPO:
+
+1.  FORK this repo, this will create a copy for you in your github
+
+2. CLONE your OWN repo into your local machine. DO NOT nest git repos.
+
+3. ADD your login and registration to the cloned project, keeping it all contained in a directory. Ideally, this directory would be named something that indicates who you are and would NOT contain spaces
+
+4. COMMIT your changes
+
+5. PUSH your changes to your remote repo
+
+6. PULL REQUEST
+
+
 Assignment: Login and Registration
 
 We've learned about how we can connect to the database, insert records posted from a form, retrieve records from a database and set a session/flash for any error or success messages that we get along the way. One of the major components to every website is a login and registration.
