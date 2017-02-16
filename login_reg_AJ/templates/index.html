@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login/Registration</title>
+  </head>
+  <body>
+    <div class = 'reg'>
+      <h2>Register</h2>
+
+
+      <form action='/reg' method='POST'>
+        {% with messages = get_flashed_messages(category_filter=["category1"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+        {% with messages = get_flashed_messages(category_filter=["category6"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+
+        <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label><br><br>
+        {% with messages = get_flashed_messages(category_filter=["category2"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+        <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label><br><br>
+        {% with messages = get_flashed_messages(category_filter=["category3"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+        <label for="occupation">Email:<input type="text" name="email" id="email"></label><br><br>
+        {% with messages = get_flashed_messages(category_filter=["category4"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+        <label for="password">Password:<input type="password" name="password" id="password"></label><br><br>
+        {% with messages = get_flashed_messages(category_filter=["category5"]) %}
+          {% if messages %}
+            {%for message in messages%}
+                <p>{{message}}</p>
+              {%endfor%}
+          {%endif%}
+        {%endwith%}
+        <label for="pconf">Confirm Password:<input type="password" name="pconf" id="pconf"></label><br><br>
+        <input type="submit" value="Create">
+      </form>
+      </div>
+      <div class = 'login'>
+        <h2>Log-in (for users already registered)</h2>
+
+        <form action = '/login', method = 'POST'>
+          {% with messages = get_flashed_messages(category_filter=["category7"]) %}
+            {% if messages %}
+              {%for message in messages%}
+                  <p>{{message}}</p>
+                {%endfor%}
+            {%endif%}
+          {%endwith%}
+          {% with messages = get_flashed_messages(category_filter=["category8"]) %}
+            {% if messages %}
+              {%for message in messages%}
+                  <p>{{message}}</p>
+                {%endfor%}
+            {%endif%}
+          {%endwith%}
+
+          Email: <input type='text' name='email'><br><br>
+          Password: <input type='password' name='password'><br><br>
+          <input type = "submit" value="Log-in">
+        </form>
+      </div>
+  </body>
+</html>
