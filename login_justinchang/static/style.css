@@ -1,0 +1,38 @@
+body {
+  width: 100%;
+}
+
+div {
+  display: inline-block;
+    vertical-align: top;
+  height: 400px;
+  width: 350px;
+  padding: 20px;
+  margin: auto;
+  border: 1px black solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+li {
+  color: red;
+  font-size: 10pt;
+}
+
+td {
+  padding: 5px;
+}
+
+td:nth-child(1) {
+  text-align: right;
+  font-weight: bold;
+}
+td:nth-child(2) {
+  text-align: right;
+}
+td:nth-child(3) {
+  text-align: left;
+  color: red;
+}
