@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>email_validation</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type href="{{url_for('static', filename = "css/styles.css")}}">
+  </head>
+  <body>
+    <div class="container">
+     <H3 class='card-panel teal lighten-2'>Welcome to your dashboard:</h3>
+       {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {% for me in messages %}
+        <p class='green'>{{ me }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+  </body>
+</html>
