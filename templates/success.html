@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome</title>
+    </head>
+    <body>
+        <div class="logged-in">
+            {% if session.firsttime %}
+                <h2>Thanks for registering, {{ specific_user.first_name }}!</h2>
+            {% else %}
+                <h2>Thanks for logging in, {{ specific_user.first_name }}!</h2>
+            {% endif %}
+            <form action='/logout' method='post'>
+                <input type="submit" value="Log out">
+            </form>
+        </div>
+    </body>
+</html>
