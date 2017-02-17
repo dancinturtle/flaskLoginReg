@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheet.css')}}" />
+        <title>Registration and Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="register">
+                <table>
+                    <h1>Registration</h1>
+                    <form action="/register" method="post">
+                        <label><h2>email:</h2><input type="text" name="email" value=""></label>
+                        <label><h2>First Name:</h2><input type="text" name="first_name" value=""></label>
+                        <label><h2>Last Name:</h2><input type="text" name="lastname" value=""></label>
+                        <label><h2>Password:</h2><input type="text" name="password" value=""></label>
+                        <label><h2>Confirm Password:</h2><input type="text" name="confirm_password" value=""></label>
+                        <input class="btn" type="submit" name="" value="Register">
+                    </form>
+                </table>
+            </div>
+            <div class="login">
+                <h1>Login</h1>
+                <form action='/login' method="post">
+                    <label><h2>email:</h2><input type="text" name="email" value=""></label>
+                    <label><h2>Password:</h2><input type="text" name="password" value=""></label>
+                    <input class="btn" type="submit" name="login" value="login">
+                </form>
+            </div>
+            <div class="flash">
+                {%with messages = get_flashed_messages()%}
+                    {%if messages%}
+                    <ul>
+                    {%for msg in messages%}
+                      <li>{{msg}}</li>
+                    {%endfor%}
+                    </ul>
+                    {%endif%}
+                {%endwith%}
+            </div>
+        </div>
+    </body>
+</html>

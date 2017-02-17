@@ -1,0 +1,27 @@
+.container{
+    width: 980px;
+    height: 100%
+
+}
+.register{
+    width: 40%;
+    display: inline-block;
+    margin:-10px 0px 0px 10px;
+}
+.login{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin:0px 0px 0px -50px;
+}
+
+.btn{
+    background: gray;
+    font-size: 16px;
+    display: block;
+    margin: 10px;
+}
+
+.flash{
+    color: red;
+}
