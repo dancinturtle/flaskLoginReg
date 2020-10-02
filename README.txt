@@ -1,4 +1,4 @@
-TO CONTRIBUTE TO THIS REPO:
+How TO CONTRIBUTE TO THIS REPO:
 
 1.  FORK this repo, this will create a copy for you in your github
 
